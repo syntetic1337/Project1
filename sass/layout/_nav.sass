@@ -5,10 +5,18 @@
     right: 0
     left: 100%
     font-size: 1.2rem
-
+    
     overflow: hidden
 
-    transition: all ease-in-out 250ms
+    @media(min-width: 725px)
+        position: relative
+        flex: auto
+        background: none
+        margin-top: 1em
+        margin-left: 2em
+        left: 0
+        transition: none
+        
 
 
     ul 
@@ -17,11 +25,19 @@
         justify-content: space-around
         text-align: center
         height: 100vh
+
+        @media(min-width: 725px)
+         flex-direction: row
+         height: auto
+
     
     li 
         display: flex
         flex: 1 1 auto
-        border: 1px solid rgba(0, 0, 0 , .15)
+        @media(min-width: 725px)
+            display: inline-block
+            border:none
+            text-align: right
         
     a
         color: $text-inverse
@@ -30,10 +46,16 @@
         flex-basis: 100%
         align-items: center
         justify-content: center
+        @media(min-width: 725px)
+            justify-content: flex-end
+            flex-basis: auto
         
         
         &:hover
             background: rgba(0, 0 , 0, .10)
+            @media(min-width: 725px)
+                background: none
+                color: darken($text-inverse, 15%)
 
     
     &.is-open  
@@ -49,6 +71,8 @@
     right: 1em
     top: 1em
     cursor: pointer
+    @media(min-width: 725px)
+        display: none
 
 .hamburger, .hamburger::before, .hamburger::after 
     content: ''
